@@ -2,18 +2,29 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List;
 
 public class WriterFile {
-    private static FileWriter write1;
+    private String filename;
+    private String directory;
+    private Path path = Paths.get(directory, filename);
+    private String content;
 
-    public WriterFile() throws IOException {
-        this.write1 = new FileWriter("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt");
+    public WriterFile() {
+        this.filename = filename;
+        this.directory = directory;
+        this.content = content;
     }
 
-    public static void writeFiles() {
+    public void writeFiles() {
         try {
-
+            Files.write(path, content.getBytes(), StandardOpenOption.CREATE);
+        } catch (IOException e) {
         }
-
     }
+
 }

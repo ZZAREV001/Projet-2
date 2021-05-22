@@ -1,14 +1,16 @@
 package com.hemebiotech.analytics;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
+
+import static com.hemebiotech.analytics.ReadFile.fileReader;
+import static com.hemebiotech.analytics.WriterFile.fileWriter;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        var fileOutput = new WriterFile();
-        var fileInput = new ReadFile();
-
+        Scanner scan = fileReader();
+        fileWriter(scan);
 
     }
 }

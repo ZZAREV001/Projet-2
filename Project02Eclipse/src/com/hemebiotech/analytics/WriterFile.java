@@ -1,30 +1,32 @@
 package com.hemebiotech.analytics;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
+import java.nio.charset.Charset;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.util.Scanner;
 
-public class WriterFile {
-    private String filename;
-    private String directory;
-    private Path path = Paths.get(directory, filename);
-    private String content;
+public class WriterFile implements WriterMethod {
+    private File file;
 
     public WriterFile() {
-        this.filename = filename;
-        this.directory = directory;
-        this.content = content;
+        this.file = file;
     }
 
-    public void writeFiles() {
-        try {
-            Files.write(path, content.getBytes(), StandardOpenOption.CREATE);
-        } catch (IOException e) {
-        }
+    public static void fileWriter(Scanner scan) throws IOException {
+        String fileContent = "";
+        while (scan.hasNextLine())
+            fileContent = fileContent.concat(scan.nextLine() + "\n");
+
+        var writer = new FileWriter("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/new-Symptoms.txt");
+        writer.write(fileContent);
+        writer.close();
     }
 
+    @Override
+    public void WriterFile() {
+
+    }
 }

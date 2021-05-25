@@ -2,23 +2,65 @@ package com.hemebiotech.analytics;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class LinesReadCheck implements LinesReadingChecking {
-    private Path file;
+public class LinesReadCheck<path> implements LinesReadingChecking {
+    private Paths path;
+    private HashMap<Object, ArrayList<String>> map;
+    private String symptoms;
 
-    public LinesReadCheck() {
+    public LinesReadCheck(String a) {
+        symptoms = a;
+        map = new HashMap<Object, ArrayList<String>>();
+        var path = Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt", "symptoms.txt");
     }
 
-    public List<String> linesCheckFiles() throws IOException {
+    // Add a symptom in parameter into symptoms.txt.
+    public boolean addSymptom(String symptomsC) {
+        if (map.containsKey(symptomsC))
+            return false;
+        map.put(symptomsC, new ArrayList<String>());
+        return true;
+    }
 
+    // Delete a symptom into symptoms.txt
+    public void removeSymptom(String symptomsC) {
+        map.remove(symptomsC);
+    }
+
+    // Display symptoms
+    public void displaySymptoms() {
+        System.out.println(symptoms);
+
+        for (Object s : map.keySet()) {
+            System.out.println(s);
+            System.out.println(map.get(s));
+        }
+    }
+
+    // Create a function that read a .txt file and returns tree maps as Tree.
+    public Map<Integer, Long> wordCountByLength() {
+        try (Stream<String> lines = Files.lines(Paths.get(String.valueOf(path)))) {
+            return lines.map(l -> l.split(" ")).flatMap(Arrays::stream).filter(s -> !s.isEmpty())
+                    .collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.counting()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // Count the symptoms in symptoms.txt
+    public static void countFunction() throws IOException {
         List<String> symptomsList = Files.lines(Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt"))
-                .filter(line -> line.contains(""))
+                .filter(line -> line.contains("rash"))
                 .collect(Collectors.toList());
-        return symptomsList;
+        System.out.println(symptomsList);
+    }
+
+    public Paths getPath() {
+        return path;
     }
 
 }

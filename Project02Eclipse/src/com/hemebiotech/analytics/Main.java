@@ -13,10 +13,13 @@ import static com.hemebiotech.analytics.ReadFile.getSymptoms;
 public class Main {
 
     public static <path> void main(String[] args) throws IOException {
+        // 1st Part: read symptoms from a file defined by the user. Space complexity in worst case: O(1).
         getSymptoms("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt");
-        countFunction("anxiety");
 
-        // Add most frequent symptoms name in ArrayList.
+        // 2nd part: pick a symptom in the list and return a list indicating how many times is present the picked symptoms.
+        countFunction("low blood pressure");
+
+        // 3rd part: add most frequent symptoms name in results.txt.
         var listOfSymptoms = new ArrayList<String>();
         listOfSymptoms.add("rash");
         listOfSymptoms.add("anxiety");
@@ -25,6 +28,8 @@ public class Main {
 
         writeSymptoms("results.txt", listOfSymptoms);
     }
+
+
 
     public static void countFunction(String symptoms) throws IOException {
         List<String> symptomsList = Files.lines(Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt"))
@@ -35,7 +40,7 @@ public class Main {
 
     public static void writeSymptoms(String path1, ArrayList<String> symptoms1) throws IOException {
         try {
-            var fileWrite1 = new FileWriter(path1);
+            var fileWrite1 = new FileWriter(path1, true);   // append the written file.
             var filePrint1 = new PrintWriter(fileWrite1);
             for (String s : symptoms1)
                 filePrint1.println(s);

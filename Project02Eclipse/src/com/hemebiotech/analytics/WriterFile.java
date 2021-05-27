@@ -1,9 +1,10 @@
 package com.hemebiotech.analytics;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class WriterFile implements WriterMethod {
     private String writtenSymptoms;
@@ -14,9 +15,15 @@ public class WriterFile implements WriterMethod {
     }
 
     /**
-     * write new symptoms in a new file results.txt
+     * Write new symptoms in a new file results.txt: filter and collect symptoms from the indicated file.
+     * Print each symptoms in a list of string: we will see how many times appears a symptom written by the user.
      */
-
+    public static void countFunction(String symptoms, String path1) throws IOException {
+        List<String> symptomsList = Files.lines(Paths.get(path1))
+                .filter(line -> line.contains(symptoms))
+                .collect(Collectors.toList());
+        System.out.println(symptomsList);
+    }
 
     public String getWrittenSymptoms() {
         return writtenSymptoms;

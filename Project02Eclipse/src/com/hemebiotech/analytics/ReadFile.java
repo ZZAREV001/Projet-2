@@ -10,10 +10,11 @@ public class ReadFile implements ISymptomReader {
     /**
      * read symptoms in the file symptoms.txt.
      */
+    private String path1;
 
-    public static List<String> getSymptoms() throws FileNotFoundException {
+    public static List<String> getSymptoms(String path1) throws FileNotFoundException {
         try {
-            var p = Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt");
+            var p = Paths.get(path1);
 
             List<String> data = Files.readAllLines(p);
 
@@ -22,12 +23,20 @@ public class ReadFile implements ISymptomReader {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            return null;
+        return null;
         }
 
     @Override
     public List<String> GetSymptoms() {
         return null;
+    }
+
+    public String getPath1() {
+        return path1;
+    }
+
+    public void setPath1(String path1) {
+        this.path1 = path1;
     }
 }
 

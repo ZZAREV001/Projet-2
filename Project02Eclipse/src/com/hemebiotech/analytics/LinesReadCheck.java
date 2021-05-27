@@ -7,13 +7,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LinesReadCheck<path> implements LinesReadingChecking {
-    private Paths path;
+public class LinesReadCheck implements LinesReadingChecking {
     private HashMap<Object, ArrayList<String>> map;
     private String symptoms;
+    private String path;
 
-    public LinesReadCheck(String a) {
-        symptoms = a;
+    public LinesReadCheck() {
         map = new HashMap<Object, ArrayList<String>>();
         var path = Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt", "symptoms.txt");
     }
@@ -52,15 +51,14 @@ public class LinesReadCheck<path> implements LinesReadingChecking {
     }
 
     // Count the symptoms in symptoms.txt
-    public static void countFunction() throws IOException {
-        List<String> symptomsList = Files.lines(Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt"))
-                .filter(line -> line.contains("rash"))
-                .collect(Collectors.toList());
-        System.out.println(symptomsList);
+
+
+    public String getSymptoms() {
+        return symptoms;
     }
 
-    public Paths getPath() {
-        return path;
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
     }
 
 }

@@ -6,11 +6,11 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class WriterFile implements WriterMethod {
+public class ZTestWriterFile {
     private String writtenSymptoms;
     private String path1;
 
-    public WriterFile(String writtenSymptoms) {
+    public ZTestWriterFile(String writtenSymptoms) {
         this.writtenSymptoms = writtenSymptoms;
     }
 

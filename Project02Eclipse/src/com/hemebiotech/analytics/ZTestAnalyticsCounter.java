@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 
-public class AnalyticsCounter {
+public class ZTestAnalyticsCounter {
 	private static int headacheCount = 0;	// initialize to 0
 	private static int rashCount = 0;		// initialize to 0
 	private static int pupilCount = 0;      // initialize to 0

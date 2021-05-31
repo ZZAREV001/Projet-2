@@ -7,12 +7,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LinesReadCheck implements LinesReadingChecking {
+public class ZTestLinesReadCheck {
     private HashMap<Object, ArrayList<String>> map;
     private String symptoms;
     private String path;
 
-    public LinesReadCheck() {
+    public ZTestLinesReadCheck() {
         map = new HashMap<Object, ArrayList<String>>();
         var path = Paths.get("/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt", "symptoms.txt");
     }

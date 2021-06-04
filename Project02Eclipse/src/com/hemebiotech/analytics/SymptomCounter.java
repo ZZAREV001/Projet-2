@@ -12,12 +12,13 @@ public class SymptomCounter implements ISymptomCounter  {
     private Integer occurrences;
 
     /**
+     * countSymptoms() returns a TreeMap that includes each symptom and the number of times it appears.
      * Integer occurrences: count the number of times a symptom appears in the list of String.
-     * countSymptoms() returns a TreeMap that includes each symptom and the number of times it appears
-     * @param
-     * @return
+     * Linear Search algorithm. Time complexity: O(1) best case, O(n) worst case.
+     * @param symptomList
+     * @return result
      */
-    // We implement the method against its interface (declarative programming)
+    // Linear search algorithm
     @Override
     public TreeMap<String, Integer> countSymptoms(List<String> symptomList) {
         Arrays.sort(new List[]{symptomList});

@@ -25,15 +25,15 @@ public class SymptomCounter implements ISymptomCounter  {
         Integer count = 0;
         String first = symptomList.get(0);
 
-        for (int counter = 0; counter < symptomList.size(); counter++) {
-            if (first.hashCode() == symptomList.get(counter).hashCode())
+        for (String s : symptomList) {
+            if (first.hashCode() == s.hashCode())
                 count++;
             else {
                 result.put(first, count);
                 count = 1;
             }
-        first = symptomList.get(counter);
-        result.put(first, count);
+            first = s;
+            result.put(first, count);
         }
         return result;
     }

@@ -14,6 +14,9 @@ public class Main {
         String path = "/Users/GoldenEagle/IdeaProjects/Projet-2-bis/Project02Eclipse/symptoms.txt";
         System.out.println(symptoms2.getSymptoms(path));
 
+        var analyze2 = new SymptomCounter();
+        System.out.println(analyze2.countSymptoms(symptoms2.getSymptoms(path)));
+
 
 
     }

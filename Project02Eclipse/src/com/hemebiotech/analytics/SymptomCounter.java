@@ -18,7 +18,7 @@ public class SymptomCounter implements ISymptomCounter  {
      * @param symptomList
      * @return result
      */
-    // Linear search algorithm
+    // Linear search algorithm. Space complexity O(n).
     @Override
     public TreeMap<String, Integer> countSymptoms(List<String> symptomList) {
         Arrays.sort(new List[]{symptomList});

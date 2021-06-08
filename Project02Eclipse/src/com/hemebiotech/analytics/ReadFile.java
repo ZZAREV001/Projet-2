@@ -5,11 +5,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+/**
+ * ReadFile is a class for reading symptoms in the file symptoms.txt.
+ */
 public class ReadFile implements IReadFile{
-    /**
-     * A class for reading symptoms in the file symptoms.txt.
-     * Corriger le nom de la classe
-     */
 
     /**
      * getSymptoms() returns a list of strings containing all lines of the .txt file.

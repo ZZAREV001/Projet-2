@@ -25,15 +25,14 @@ public class SymptomCounter implements ISymptomCounter  {
         var result = new TreeMap<String, Integer>();
         Integer count = 0;
         String first = symptomList.get(0);
-
-        for (String s : symptomList) {
-            if (first.hashCode() == s.hashCode())
+        for (int counter = 0; counter < symptomList.size(); counter++) {
+            if (first.hashCode() == symptomList.get(counter).hashCode()) {
                 count++;
-            else {
+            } else {
                 result.put(first, count);
                 count = 1;
             }
-            first = s;
+            first = symptomList.get(counter);
             result.put(first, count);
         }
         return result;

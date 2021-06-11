@@ -19,7 +19,7 @@ public class WriteFile implements IWriteFile {
      */
     @Override
     public void symptomFileWriter(TreeMap<String, Integer> symptoms) throws IOException {
-            var writer1 = new PrintWriter(new FileWriter("result.out"));
+            PrintWriter writer1 = new PrintWriter(new FileWriter("result.out"));
             writer1.write(String.valueOf(symptoms));
             writer1.close();
     }

@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -10,30 +9,26 @@ import java.util.TreeMap;
 public class SymptomCounter implements ISymptomCounter  {
     private List<String> symptomList;
     private Integer occurrences;
+    private String input;
 
     /**
      * countSymptoms() returns a TreeMap that includes each symptom and the number of times it appears.
      * Integer occurrences: count the number of times a symptom appears in the list of String.
-     * Linear Search algorithm. Time complexity: O(1) best case, O(n) worst case.
      * @param symptomList
      * @return result
      */
-    // Linear search algorithm. Space complexity O(n).
     @Override
     public TreeMap<String, Integer> countSymptoms(List<String> symptomList) {
-        Arrays.sort(new List[]{symptomList});
-        var result = new TreeMap<String, Integer>();
-        Integer count = 0;
-        String first = symptomList.get(0);
-        for (int counter = 0; counter < symptomList.size(); counter++) {
-            if (first.hashCode() == symptomList.get(counter).hashCode()) {
-                count++;
+        TreeMap<String, Integer> result = new TreeMap<String, Integer>();
+
+        for (String symptom : symptomList) {
+            Integer currentCount = result.get(symptom);
+            if (currentCount != null) {
+                currentCount++;
+                result.put(symptom, currentCount);
             } else {
-                result.put(first, count);
-                count = 1;
+                result.put(symptom, 1); // First occurrence (1).
             }
-            first = symptomList.get(counter);
-            result.put(first, count);
         }
         return result;
     }

@@ -2,6 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class ReadFile implements IReadFile{
     public List<String> getSymptoms(String path1) {
         List<String> data = null;
         try {
-            var p = Paths.get(path1);
+            Path p = Paths.get(path1);
 
             data = Files.readAllLines(p);
         } catch (IOException e) {

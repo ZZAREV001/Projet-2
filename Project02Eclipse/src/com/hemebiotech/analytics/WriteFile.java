@@ -10,10 +10,11 @@ import java.util.TreeMap;
  * and generating a result.out file where the user can see all symptoms with their occurrences.
  */
 public class WriteFile implements IWriteFile {
-    private String fileName;
 
     /**
      * symptomFileWriter() generates the result.out file after reading the symptoms and their occurrences.
+     * Average / worst case time complexity: O(n). Why? Insert from hashtable to a new file.
+     * Worst case space complexity: O(n). Why? Operations with arrays and hashtable are linear time if files grow.
      * @param symptoms
      * @return void
      */
@@ -24,7 +25,4 @@ public class WriteFile implements IWriteFile {
             writer1.close();
     }
 
-    public String getFileName() {
-        return fileName;
-    }
 }

@@ -14,7 +14,7 @@ public class ReadFile implements IReadFile{
     /**
      * getSymptoms() returns a list of strings containing all lines of the .txt file.
      * We use java.nio, a recent package to analyze files (Java 8).
-     * Linear Search algorithm. Time complexity: O(1) best case, O(n) worst case.
+     * Average / worst case time complexity: O(1). Why? Array access.
      * @param path1
      * @return data
      */

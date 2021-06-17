@@ -20,13 +20,13 @@ public class SymptomCounter implements ISymptomCounter  {
     public TreeMap<String, Integer> countSymptoms(List<String> symptomList) {
         TreeMap<String, Integer> result = new TreeMap<String, Integer>();
 
-        for (String symptom : symptomList) {             // Traverse array symptomList.
+        for (String symptom : symptomList) {             // Traverse array symptomList with symptom as String variable.
             Integer currentCount = result.get(symptom);  // Insert occurrences of a string in a local integer variable.
             if (currentCount != null) {                  // If occurrences is null:
-                currentCount++;                          //      increment local variable
+                currentCount++;                          //      Increment local integer variable.
                 result.put(symptom, currentCount);       //      Insert in hashtable occurrence and its symptom.
             } else {
-                result.put(symptom, 1);                 // Else insert symptom and one occurrence in array.
+                result.put(symptom, 1);                 // Else insert symptom and one occurrence in array symptomList.
             }
         }
         return result;                                  // Return sorted hashtable result.

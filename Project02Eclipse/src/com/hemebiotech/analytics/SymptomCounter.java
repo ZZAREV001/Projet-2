@@ -13,7 +13,7 @@ public class SymptomCounter implements ISymptomCounter  {
      * Integer occurrences: count the number of times a symptom appears in the list of String.
      * Average case time complexity: θ(n+1) = θ(n). Why? Search in array and insert in hashtable.
      * Worst case time complexity: O(n+n) = O(2n) = O(n). Why? Search in array and insert in hashtable.
-     * @param symptomList
+     * @param symptomList List of symptoms
      * @return result
      */
     @Override

@@ -8,5 +8,10 @@ import java.util.TreeMap;
  */
 
 public interface IWriteFile {
+    /**
+     * Abstract data type write in file.
+     * @param symptoms hash table
+     * @throws IOException throw exception in case of problem with new file
+     */
     void symptomFileWriter(TreeMap<String, Integer> symptoms) throws IOException;
 }

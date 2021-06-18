@@ -8,6 +8,10 @@ import java.util.TreeMap;
  */
 
 public interface ISymptomCounter {
-
+    /**
+     * Abstract data type count occurrences for each symptoms.
+     * @param symptomList List of symptoms
+     * @return TreeMap
+     */
     public TreeMap<String, Integer> countSymptoms(List<String> symptomList);
 }

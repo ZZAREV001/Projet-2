@@ -3,8 +3,16 @@ package com.hemebiotech.analytics;
 import java.io.IOException;
 import java.util.TreeMap;
 
+/**
+ * Main class launches the program.
+ */
 public class Main {
 
+    /**
+     * main method executes the different steps of the program.
+     * @param args initial main parameter
+     * @throws IOException throw exception in case of problem with files
+     */
     public static void main(String[] args) throws IOException {
 
         /**

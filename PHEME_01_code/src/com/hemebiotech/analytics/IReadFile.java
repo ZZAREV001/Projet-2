@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IReadFile {
 	/**
-	 * Abstract data type read txt file into a list of string.
+	 * Abstract data type: read txt file into a list of string.
 	 * @param path1 path of the file in our local storage
 	 * @return list of strings
 	 */

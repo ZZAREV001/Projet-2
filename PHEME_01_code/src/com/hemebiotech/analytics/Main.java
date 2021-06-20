@@ -9,8 +9,8 @@ import java.util.TreeMap;
 public class Main {
 
     /**
-     * main method executes the different steps of the program.
-     * @param args initial main parameter
+     * main method executes the different steps of the program by calling methods from the 3 classes.
+     * @param args Java command line arguments (type array of Strings)
      * @throws IOException throw exception in case of problem with files
      */
     public static void main(String[] args) throws IOException {

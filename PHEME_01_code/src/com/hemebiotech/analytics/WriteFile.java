@@ -13,8 +13,8 @@ public class WriteFile implements IWriteFile {
 
     /**
      * symptomFileWriter() generates the result.out file after reading the symptoms and their occurrences.
-     * Average / worst case time complexity: O(n). Why? Insert from hashtable to a new file.
-     * Worst case space complexity: O(n). Why? Operations with arrays and hashtable are linear time if files grow.
+     * Average / worst case time complexity: O(n). Why? Insert from hash table one by one to a new file.
+     * Worst case space complexity: O(n). Why? Operations with arrays and hash table are linear time if files grow.
      * @param symptoms List of symptoms
      */
     @Override
